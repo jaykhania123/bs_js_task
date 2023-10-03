@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<style>
+    .first {
+        margin-left: 4em;
+        margin-top: 1em;
+        padding: 15px;
+        border: 1px black solid;
+        width: 20em;
+        text-align: center;
+    }
+</style>
+
+<html>
+  <body>
+    <div class="first">
+      <h2>Mulputply / Divide</h2>
+      <p>1st number:
+      <input id="num1" /><br /></p>
+      <p>2nd number:
+      <input id="num2" /><br></p><br>
+      <button type="button" onclick="divide()">Divide</button>
+      <button type="button" onclick="mulputply()">Multiply</button>
+      <p> The result is:</p>
+      <p id="demo"></p>
+    </div>
+    
+    <script>
+      function divide() {
+        let x = document.getElementById("num1").value;
+        let y = document.getElementById("num2").value;
+        let z = x/y
+        document.getElementById("demo").innerHTML = z;
+      }
+
+      function mulputply() {
+        let x = document.getElementById("num1").value;
+        let y = document.getElementById("num2").value;
+        let z = x*y
+        document.getElementById("demo").innerHTML = z;
+      }
+    </script>
+  </body>
+</html>

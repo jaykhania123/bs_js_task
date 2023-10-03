@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>JavaScript Animation</title>      
+      <style>
+         /* Style for the buttons */
+         input[type="button"] {
+            padding: 10px 20px;
+            background-color: #0074d9; /* Blue background color */
+            color: #fff; /* White text color */
+            border: none;
+            border-radius: 5px; /* Rounded corners */
+            cursor: pointer;
+            font-size: 16px;
+            margin: 5px;
+         }
+
+         /* Style for the "Stop" button */
+         input[type="button"]:last-child {
+            background-color: #e74c3c; /* Red background color for "Stop" button */
+         }
+
+         /* Center the button container */
+         .button-container {
+            text-align: center;
+         }
+
+         /* Style for the paragraph */
+         p {
+            color: blue;
+            font-size: xx-large;
+            font-weight: bold;
+            text-align: center;
+         }
+      </style>
+      <script type="text/javascript">
+         var imgObj = null;
+         var animate;
+
+         function init() {
+            imgObj = document.getElementById('myImage');
+            imgObj.style.position = 'relative';
+            imgObj.style.left = '0px';
+         }
+
+         function moveRight() {
+            imgObj.style.left = parseInt(imgObj.style.left) + 10 + 'px';
+            animate = setTimeout(moveRight, 40);
+         }
+
+         function stop() {
+            clearTimeout(animate);
+         }
+
+         window.onload = init;
+      </script>
+   </head>
+   <body>
+      <form>
+         <img id="myImage" src="https://media.istockphoto.com/id/537318651/photo/waiting-s-bahn-railroad-station.jpg?s=1024x1024&w=is&k=20&c=I4GT89cvSCdG7TT9rWE_qUbPPe8340L83sGVuMP1HOo="/>
+         <div class="button-container">
+            <p>Click the following buttons to handle the animation</p>
+            <input type="button" value="Start" onclick="moveRight();" />
+            <input type="button" value="Stop" onclick="stop();" />
+         </div>
+      </form>
+   </body>
+</html>

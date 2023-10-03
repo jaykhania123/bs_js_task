@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <button onclick="onlyDate()">Show Date</button>
+    <p id="t1"></p>
+    <br /><br />
+    <button onclick="document.getElementById('t2').innerHTML=Date()">
+      Show Time
+    </button>
+    <p id="t2"></p>
+  </body>
+
+  <script>
+    function onlyDate() {
+      const d = (new Date()).toString();
+      let day = d.split(" ")[2]
+      let month = d.split(" ")[1]
+      let year = d.split(" ")[3]
+      let date = day+"/"+month+"/"+year
+      document.getElementById("t1").innerHTML = date;
+    }
+  </script>
+</html>

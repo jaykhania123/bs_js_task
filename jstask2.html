@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .one {
+      padding: 15px;
+      padding-left: 30px;
+    }
+  </style>
+  <body>
+    <div class="one">
+      Input String:
+      <input type="text" id="t1" value="webmaster" />
+      <br /><br />
+      <button type="button" onclick="alphabetical()">Submit</button>
+      <br /><br />
+      <br /><br />
+      Final String:
+      <p id="t2"></p>
+    </div>
+  </body>
+
+  <script>
+    function alphabetical() {
+      let x = document.getElementById("t1").value;
+      let text = x;
+      let arr = text.split("");
+      arr.sort();
+      text = arr.join("");
+      document.getElementById("t2").innerHTML = text;
+    }
+  </script>
+</html>

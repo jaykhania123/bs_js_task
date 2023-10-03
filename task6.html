@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap demo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+
+<body>
+  <!-- Fname -->
+  <div class="container " style="padding-left: 22%;padding-top: 10%;">
+    <form class="row g-5">
+      <div class="col-md-7">
+        <label for="validationServerUsername" class="form-label">Name</label>
+        <div class="input-group has-validation">
+          <input type="text" class="form-control is-invalid" id="validationServerUsername"
+            aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" required>
+          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+            Name is required
+          </div>
+        </div>
+      </div>
+      <div class="col-md-7">
+        <label for="validationServerUsername" class="form-label">Email</label>
+        <div class="input-group has-validation">
+          <input type="email" class="form-control is-invalid" id="validationServerUsername"
+            aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" required>
+          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+            Email is required
+          </div>
+        </div>
+      </div>
+      <div class="col-md-7">
+        <label for="validationServerUsername" class="form-label">Password</label>
+        <div class="input-group has-validation">
+          <input type="password" class="form-control is-invalid" id="validationServerUsername"
+            aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" required>
+          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+            Password is required
+          </div>
+        </div>
+      </div>
+      <div class="col-md-7">
+        <label for="">Hobbies</label>
+        <select class="form-select" id="inputGroupSelect02">
+          <option selected></option>
+          <option value="1">Baseball</option>
+          <option value="2">Volleyball</option>
+          <option value="3">Football</option>
+          <option value="4">Basketball</option>
+          <option value="5">Cricket</option>
+          <option value="6">Rugby</option>
+
+        </select>
+      </div>
+      <div class="col-md-7">
+        <div class="d-grid gap-2">
+          <button class="btn btn-danger" type="button">Register</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

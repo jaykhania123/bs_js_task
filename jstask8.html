@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, rgba(246, 247, 195, 1), rgba(214, 134, 182, 1));
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        label {
+            display: inline-flex;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="number"],
+        input[type="tel"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-top: 5px;
+        }
+
+        .error-message {
+            color: red;
+        }
+
+        .error {
+            border: 1px solid red;
+        }
+
+        button[type="submit"] {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        .error {
+            border: 1px solid red;
+        }
+
+        .error-message {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Registration Form</h2>
+    <form id="myForm">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName">
+        <span id="firstNameError" class="error-message"></span><br><br>
+
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName">
+        <span id="lastNameError" class="error-message"></span><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+        <span id="emailError" class="error-message"></span><br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+        <span id="passwordError" class="error-message"></span><br><br>
+
+        <label for="reenterPassword">Re-enter Password:</label>
+        <input type="password" id="reenterPassword" name="reenterPassword">
+        <span id="reenterPasswordError" class="error-message"></span><br><br>
+
+        <label>Gender:</label>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label><br><br>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age">
+        <span id="ageError" class="error-message"></span><br><br>
+
+        <label for="phoneNumber">Phone Number:</label>
+        <input type="tel" id="phoneNumber" name="phoneNumber">
+        <span id="phoneNumberError" class="error-message"></span><br><br>
+
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" rows="4"></textarea>
+        <span id="addressError" class="error-message"></span><br><br>
+
+        <label for="state">State:</label>
+        <input type="text" id="state" name="state">
+        <span id="stateError" class="error-message"></span><br><br>
+
+        <label for="country">Country:</label>
+        <select id="country" name="country">
+            <option value="" disabled selected>Select your country</option>
+            <option value="India">India</option>
+            <option value="USA">USA</option>
+        </select><br><br>
+
+        <label>Languages Known:</label>
+        <input type="checkbox" id="hindi" name="languages[]" value="Hindi">
+        <label for="hindi">Hindi</label>
+        <input type="checkbox" id="english" name="languages[]" value="English">
+        <label for="english">English</label>
+        <input type="checkbox" id="kannada" name="languages[]" value="Kannada">
+        <label for="kannada">Kannada</label>
+        <input type="checkbox" id="telugu" name="languages[]" value="Telugu">
+        <label for="telugu">Telugu</label><br><br>
+
+        <input type="checkbox" id="declaration" name="declaration">
+        <label for="declaration">Hereby I declare that all information is true</label>
+        <span id="declarationError" class="error-message"></span><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+    <script>
+        document.getElementById("myForm").addEventListener("submit", function (event) {
+            const firstName = document.getElementById("firstName").value;
+            const lastName = document.getElementById("lastName").value;
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            const reenterPassword = document.getElementById("reenterPassword").value;
+            const age = document.getElementById("age").value;
+            const phoneNumber = document.getElementById("phoneNumber").value;
+            const address = document.getElementById("address").value;
+            const state = document.getElementById("state").value;
+            const country = document.getElementById("country").value;
+            const declaration = document.getElementById("declaration").checked;
+
+            const firstNameError = document.getElementById("firstNameError");
+            const lastNameError = document.getElementById("lastNameError");
+            const emailError = document.getElementById("emailError");
+            const passwordError = document.getElementById("passwordError");
+            const reenterPasswordError = document.getElementById("reenterPasswordError");
+            const ageError = document.getElementById("ageError");
+            const phoneNumberError = document.getElementById("phoneNumberError");
+            const addressError = document.getElementById("addressError");
+            const stateError = document.getElementById("stateError");
+            const declarationError = document.getElementById("declarationError");
+
+            let isValid = true;
+
+            // Validation logic for First Name
+            if (firstName === "") {
+                document.getElementById("firstName").classList.add("error");
+                firstNameError.textContent = "First Name is required";
+                isValid = false;
+            } else {
+                document.getElementById("firstName").classList.remove("error");
+                firstNameError.textContent = "";
+            }
+
+            // Validation logic for Last Name
+            if (lastName === "") {
+                document.getElementById("lastName").classList.add("error");
+                lastNameError.textContent = "Last Name is required";
+                isValid = false;
+            } else {
+                document.getElementById("lastName").classList.remove("error");
+                lastNameError.textContent = "";
+            }
+
+            // Validation logic for Email
+            if (email === "") {
+                document.getElementById("email").classList.add("error");
+                emailError.textContent = "Email is required";
+                isValid = false;
+            } else {
+                document.getElementById("email").classList.remove("error");
+                emailError.textContent = "";
+            }
+
+            // Validation logic for Password
+            if (password === "") {
+                document.getElementById("password").classList.add("error");
+                passwordError.textContent = "Password is required";
+                isValid = false;
+            } else {
+                document.getElementById("password").classList.remove("error");
+                passwordError.textContent = "";
+            }
+
+            // Validation logic for Re-enter Password
+            if (reenterPassword === "") {
+                document.getElementById("reenterPassword").classList.add("error");
+                reenterPasswordError.textContent = "Re-enter Password is required";
+                isValid = false;
+            } else if (reenterPassword !== password) {
+                document.getElementById("reenterPassword").classList.add("error");
+                reenterPasswordError.textContent = "Passwords do not match";
+                isValid = false;
+            } else {
+                document.getElementById("reenterPassword").classList.remove("error");
+                reenterPasswordError.textContent = "";
+            }
+
+            // Validation logic for Age
+            if (age === "") {
+                document.getElementById("age").classList.add("error");
+                ageError.textContent = "Age is required";
+                isValid = false;
+            } else if (isNaN(age) || age < 18 || age > 100) {
+                document.getElementById("age").classList.add("error");
+                ageError.textContent = "Please enter a valid age (between 18 and 100)";
+                isValid = false;
+            } else {
+                document.getElementById("age").classList.remove("error");
+                ageError.textContent = "";
+            }
+
+            // Validation logic for Phone Number
+            if (phoneNumber === "") {
+                document.getElementById("phoneNumber").classList.add("error");
+                phoneNumberError.textContent = "Phone Number is required";
+                isValid = false;
+            } else if (!/^\d{10}$/.test(phoneNumber)) {
+                document.getElementById("phoneNumber").classList.add("error");
+                phoneNumberError.textContent = "Please enter a valid 10-digit phone number";
+                isValid = false;
+            } else {
+                document.getElementById("phoneNumber").classList.remove("error");
+                phoneNumberError.textContent = "";
+            }
+
+            // Validation logic for Address
+            if (address === "") {
+                document.getElementById("address").classList.add("error");
+                addressError.textContent = "Address is required";
+                isValid = false;
+            } else {
+                document.getElementById("address").classList.remove("error");
+                addressError.textContent = "";
+            }
+
+            // Validation logic for State
+            if (state === "") {
+                document.getElementById("state").classList.add("error");
+                stateError.textContent = "State is required";
+                isValid = false;
+            } else {
+                document.getElementById("state").classList.remove("error");
+                stateError.textContent = "";
+            }
+
+            // Validation logic for Declaration
+            if (!declaration) {
+                declarationError.textContent = "You must agree to the declaration";
+                isValid = false;
+            } else {
+                declarationError.textContent = "";
+            }
+
+            if (!isValid) {
+                event.preventDefault();
+            }
+        });
+    </script>
+</body>
+
+</html>
